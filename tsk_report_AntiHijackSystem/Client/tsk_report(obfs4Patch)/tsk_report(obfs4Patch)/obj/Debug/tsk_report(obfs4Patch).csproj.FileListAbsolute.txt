@@ -1,0 +1,6 @@
+M:\GitHub\tsk_report\tsk_report_AntiHijackSystem\Client\tsk_report(obfs4Patch)\tsk_report(obfs4Patch)\bin\Debug\tsk_report(obfs4Patch).exe.config
+M:\GitHub\tsk_report\tsk_report_AntiHijackSystem\Client\tsk_report(obfs4Patch)\tsk_report(obfs4Patch)\bin\Debug\tsk_report(obfs4Patch).exe
+M:\GitHub\tsk_report\tsk_report_AntiHijackSystem\Client\tsk_report(obfs4Patch)\tsk_report(obfs4Patch)\bin\Debug\tsk_report(obfs4Patch).pdb
+M:\GitHub\tsk_report\tsk_report_AntiHijackSystem\Client\tsk_report(obfs4Patch)\tsk_report(obfs4Patch)\obj\Debug\tsk_report(obfs4Patch).csprojResolveAssemblyReference.cache
+M:\GitHub\tsk_report\tsk_report_AntiHijackSystem\Client\tsk_report(obfs4Patch)\tsk_report(obfs4Patch)\obj\Debug\tsk_report(obfs4Patch).exe
+M:\GitHub\tsk_report\tsk_report_AntiHijackSystem\Client\tsk_report(obfs4Patch)\tsk_report(obfs4Patch)\obj\Debug\tsk_report(obfs4Patch).pdb
