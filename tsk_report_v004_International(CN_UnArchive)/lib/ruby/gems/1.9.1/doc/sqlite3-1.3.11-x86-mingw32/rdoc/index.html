@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <meta content="text/html; charset=IBM437" http-equiv="Content-Type" />
+
+  <title>sqlite3-1.3.11-x86-mingw32 Documentation</title>
+
+  <link type="text/css" media="screen" href="rdoc.css" rel="stylesheet" />
+
+  <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body class="indexpage">
+
+  
+  <h1>sqlite3-1.3.11-x86-mingw32 Documentation</h1>
+
+  
+  <div id="main">
+    
+<ul><li>
+<p><a
+href="https://github.com/sparklemotion/sqlite3-ruby">github.com/sparklemotion/sqlite3-ruby</a></p>
+</li><li>
+<p><a
+href="http://groups.google.com/group/sqlite3-ruby">groups.google.com/group/sqlite3-ruby</a></p>
+</li><li>
+<p><a href="http://rubygems.org/gems/sqlite3">rubygems.org/gems/sqlite3</a></p>
+</li><li>
+<p><a
+href="http://www.rubydoc.info/gems/sqlite3/frames">www.rubydoc.info/gems/sqlite3/frames</a></p>
+</li></ul>
+
+<h2>DESCRIPTION</h2>
+
+<p>This module allows Ruby programs to interface with the <a
+href="SQLite3.html">SQLite3</a> database engine (<a
+href="http://www.sqlite.org">www.sqlite.org</a>).  You must have the SQLite
+engine installed in order to build this module.</p>
+
+<p>Note that this module is only compatible with SQLite 3.6.16 or newer.</p>
+
+<h2>SYNOPSIS</h2>
+
+<pre>require &quot;sqlite3&quot;
+
+# Open a database
+db = SQLite3::Database.new &quot;test.db&quot;
+
+# Create a database
+rows = db.execute &lt;&lt;-SQL
+  create table numbers (
+    name varchar(30),
+    val int
+  );
+SQL
+
+# Execute a few inserts
+{
+  &quot;one&quot; =&gt; 1,
+  &quot;two&quot; =&gt; 2,
+}.each do |pair|
+  db.execute &quot;insert into numbers values ( ?, ? )&quot;, pair
+end
+
+# Execute inserts with parameter markers
+db.execute(&quot;INSERT INTO students (name, email, grade, blog) 
+            VALUES (?, ?, ?, ?)&quot;, [@name, @email, @grade, @blog])
+
+# Find a few rows
+db.execute( &quot;select * from numbers&quot; ) do |row|
+  p row
+end</pre>
+
+<h2>Compilation and Installation</h2>
+
+<p>Install <a href="SQLite3.html">SQLite3</a>, enabling the option
+SQLITE_ENABLE_COLUMN_METADATA (see <a
+href="http://www.sqlite.org/compile.html">www.sqlite.org/compile.html</a>
+for details).</p>
+
+<p>Then do the following:</p>
+
+<pre>ruby setup.rb config
+ruby setup.rb setup
+ruby setup.rb install</pre>
+
+<p>Alternatively, you can download and install the RubyGem package for
+SQLite3/Ruby (you must have RubyGems and <a href="SQLite3.html">SQLite3</a>
+installed, first):</p>
+
+<pre>gem install sqlite3</pre>
+
+<p>If you have sqlite3 installed in a non-standard location, you can specify
+the location of the include and lib files by doing:</p>
+
+<pre>gem install sqlite3 -- --with-sqlite3-include=/opt/local/include \
+   --with-sqlite3-lib=/opt/local/lib</pre>
+
+<h1>SUPPORT!!!</h1>
+
+<h2>OMG!  Something has gone wrong!  Where do I get help?</h2>
+
+<p>The best place to get help is from the <a
+href="http://groups.google.com/group/sqlite3-ruby">sqlite3-ruby mailing
+list</a> which can be found here:</p>
+
+<pre>* http://groups.google.com/group/sqlite3-ruby</pre>
+
+<h2>I've found a bug!  Where do I file it?</h2>
+
+<p>Uh oh.  After contacting the mailing list, you've found that you've
+actually discovered a bug.  You can file the bug at the <a
+href="https://github.com/sparklemotion/sqlite3-ruby/issues">github issues
+page</a> which can be found here:</p>
+
+<pre>* https://github.com/sparklemotion/sqlite3-ruby/issues</pre>
+
+<h2>Usage</h2>
+
+<p>For help figuring out the SQLite3/Ruby interface, check out the SYNOPSIS as
+well as the RDoc. It includes examples of usage. If you have any questions
+that you feel should be address in the FAQ, please send them to <a
+href="http://groups.google.com/group/sqlite3-ruby">the mailing list</a></p>
+
+<h2>Source Code</h2>
+
+<p>The source repository is accessible via git:</p>
+
+<pre>git clone git://github.com/sparklemotion/sqlite3-ruby.git</pre>
+
+  </div>
+  
+
+  
+  
+  <h2>Files</h2>
+  <ul>
+    
+      <li class="file"><a href="API_CHANGES_rdoc.html">API_CHANGES.rdoc</a></li>
+    
+      <li class="file"><a href="CHANGELOG_rdoc.html">CHANGELOG.rdoc</a></li>
+    
+      <li class="file"><a href="Manifest_txt.html">Manifest.txt</a></li>
+    
+      <li class="file"><a href="README_rdoc.html">README.rdoc</a></li>
+    
+  </ul>
+  
+
+  <h2 id="classes">Classes/Modules</h2>
+  <ul>
+    
+    <li class="module"><a href="SQLite3.html">SQLite3</a></li>
+    
+    <li class="class"><a href="SQLite3/AbortException.html">SQLite3::AbortException</a></li>
+    
+    <li class="class"><a href="SQLite3/AuthorizationException.html">SQLite3::AuthorizationException</a></li>
+    
+    <li class="class"><a href="SQLite3/Backup.html">SQLite3::Backup</a></li>
+    
+    <li class="class"><a href="SQLite3/Blob.html">SQLite3::Blob</a></li>
+    
+    <li class="class"><a href="SQLite3/BusyException.html">SQLite3::BusyException</a></li>
+    
+    <li class="class"><a href="SQLite3/CantOpenException.html">SQLite3::CantOpenException</a></li>
+    
+    <li class="module"><a href="SQLite3/Constants.html">SQLite3::Constants</a></li>
+    
+    <li class="module"><a href="SQLite3/Constants/ColumnType.html">SQLite3::Constants::ColumnType</a></li>
+    
+    <li class="module"><a href="SQLite3/Constants/ErrorCode.html">SQLite3::Constants::ErrorCode</a></li>
+    
+    <li class="module"><a href="SQLite3/Constants/TextRep.html">SQLite3::Constants::TextRep</a></li>
+    
+    <li class="class"><a href="SQLite3/ConstraintException.html">SQLite3::ConstraintException</a></li>
+    
+    <li class="class"><a href="SQLite3/CorruptException.html">SQLite3::CorruptException</a></li>
+    
+    <li class="class"><a href="SQLite3/Database.html">SQLite3::Database</a></li>
+    
+    <li class="class"><a href="SQLite3/Database/FunctionProxy.html">SQLite3::Database::FunctionProxy</a></li>
+    
+    <li class="class"><a href="SQLite3/EmptyException.html">SQLite3::EmptyException</a></li>
+    
+    <li class="class"><a href="SQLite3/Exception.html">SQLite3::Exception</a></li>
+    
+    <li class="class"><a href="SQLite3/FormatException.html">SQLite3::FormatException</a></li>
+    
+    <li class="class"><a href="SQLite3/FullException.html">SQLite3::FullException</a></li>
+    
+    <li class="class"><a href="SQLite3/IOException.html">SQLite3::IOException</a></li>
+    
+    <li class="class"><a href="SQLite3/InternalException.html">SQLite3::InternalException</a></li>
+    
+    <li class="class"><a href="SQLite3/InterruptException.html">SQLite3::InterruptException</a></li>
+    
+    <li class="class"><a href="SQLite3/LockedException.html">SQLite3::LockedException</a></li>
+    
+    <li class="class"><a href="SQLite3/MemoryException.html">SQLite3::MemoryException</a></li>
+    
+    <li class="class"><a href="SQLite3/MismatchException.html">SQLite3::MismatchException</a></li>
+    
+    <li class="class"><a href="SQLite3/MisuseException.html">SQLite3::MisuseException</a></li>
+    
+    <li class="class"><a href="SQLite3/NotADatabaseException.html">SQLite3::NotADatabaseException</a></li>
+    
+    <li class="class"><a href="SQLite3/NotFoundException.html">SQLite3::NotFoundException</a></li>
+    
+    <li class="class"><a href="SQLite3/PermissionException.html">SQLite3::PermissionException</a></li>
+    
+    <li class="module"><a href="SQLite3/Pragmas.html">SQLite3::Pragmas</a></li>
+    
+    <li class="class"><a href="SQLite3/ProtocolException.html">SQLite3::ProtocolException</a></li>
+    
+    <li class="class"><a href="SQLite3/RangeException.html">SQLite3::RangeException</a></li>
+    
+    <li class="class"><a href="SQLite3/ReadOnlyException.html">SQLite3::ReadOnlyException</a></li>
+    
+    <li class="class"><a href="SQLite3/ResultSet.html">SQLite3::ResultSet</a></li>
+    
+    <li class="class"><a href="SQLite3/SQLException.html">SQLite3::SQLException</a></li>
+    
+    <li class="class"><a href="SQLite3/SchemaChangedException.html">SQLite3::SchemaChangedException</a></li>
+    
+    <li class="class"><a href="SQLite3/Statement.html">SQLite3::Statement</a></li>
+    
+    <li class="class"><a href="SQLite3/TooBigException.html">SQLite3::TooBigException</a></li>
+    
+    <li class="class"><a href="SQLite3/Translator.html">SQLite3::Translator</a></li>
+    
+    <li class="class"><a href="SQLite3/UnsupportedException.html">SQLite3::UnsupportedException</a></li>
+    
+    <li class="class"><a href="SQLite3/Value.html">SQLite3::Value</a></li>
+    
+    <li class="module"><a href="SQLite3/VersionProxy.html">SQLite3::VersionProxy</a></li>
+    
+    <li class="class"><a href="String.html">String</a></li>
+    
+  </ul>
+
+  <h2 id="methods">Methods</h2>
+  <ul>
+    
+      <li><a href="SQLite3/Exception.html#method-c-code">::code &mdash; SQLite3::Exception</a></li>
+    
+      <li><a href="SQLite3.html#method-c-const_missing">::const_missing &mdash; SQLite3</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-c-finalize">::finalize &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3.html#method-c-libversion">::libversion &mdash; SQLite3</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-c-new">::new &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-c-new">::new &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Statement.html#method-c-new">::new &mdash; SQLite3::Statement</a></li>
+    
+      <li><a href="SQLite3/ResultSet.html#method-c-new">::new &mdash; SQLite3::ResultSet</a></li>
+    
+      <li><a href="SQLite3/Backup.html#method-c-new">::new &mdash; SQLite3::Backup</a></li>
+    
+      <li><a href="SQLite3/Database/FunctionProxy.html#method-c-new">::new &mdash; SQLite3::Database::FunctionProxy</a></li>
+    
+      <li><a href="SQLite3/Value.html#method-c-new">::new &mdash; SQLite3::Value</a></li>
+    
+      <li><a href="SQLite3/Translator.html#method-c-new">::new &mdash; SQLite3::Translator</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-c-open">::open &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-c-quote">::quote &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-c-step">::step &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Database/FunctionProxy.html#method-i-5B-5D">#[] &mdash; SQLite3::Database::FunctionProxy</a></li>
+    
+      <li><a href="SQLite3/Database/FunctionProxy.html#method-i-5B-5D-3D">#[]= &mdash; SQLite3::Database::FunctionProxy</a></li>
+    
+      <li><a href="SQLite3/Statement.html#method-i-active-3F">#active? &mdash; SQLite3::Statement</a></li>
+    
+      <li><a href="SQLite3/Translator.html#method-i-add_translator">#add_translator &mdash; SQLite3::Translator</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-authorizer">#authorizer &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-authorizer-3D">#authorizer= &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Pragmas.html#method-i-auto_vacuum">#auto_vacuum &mdash; SQLite3::Pragmas</a></li>
+    
+      <li><a href="SQLite3/Pragmas.html#method-i-auto_vacuum-3D">#auto_vacuum= &mdash; SQLite3::Pragmas</a></li>
+    
+      <li><a href="SQLite3/Statement.html#method-i-bind_param">#bind_param &mdash; SQLite3::Statement</a></li>
+    
+      <li><a href="SQLite3/Statement.html#method-i-bind_parameter_count">#bind_parameter_count &mdash; SQLite3::Statement</a></li>
+    
+      <li><a href="SQLite3/Statement.html#method-i-bind_params">#bind_params &mdash; SQLite3::Statement</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-busy_handler">#busy_handler &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-busy_timeout">#busy_timeout &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-busy_timeout-3D">#busy_timeout= &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Pragmas.html#method-i-cache_size">#cache_size &mdash; SQLite3::Pragmas</a></li>
+    
+      <li><a href="SQLite3/Pragmas.html#method-i-cache_size-3D">#cache_size= &mdash; SQLite3::Pragmas</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-changes">#changes &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Statement.html#method-i-clear_bindings-21">#clear_bindings! &mdash; SQLite3::Statement</a></li>
+    
+      <li><a href="SQLite3/ResultSet.html#method-i-close">#close &mdash; SQLite3::ResultSet</a></li>
+    
+      <li><a href="SQLite3/Statement.html#method-i-close">#close &mdash; SQLite3::Statement</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-close">#close &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Statement.html#method-i-closed-3F">#closed? &mdash; SQLite3::Statement</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-closed-3F">#closed? &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/ResultSet.html#method-i-closed-3F">#closed? &mdash; SQLite3::ResultSet</a></li>
+    
+      <li><a href="SQLite3/Exception.html#method-i-code">#code &mdash; SQLite3::Exception</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-collation">#collation &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Statement.html#method-i-column_count">#column_count &mdash; SQLite3::Statement</a></li>
+    
+      <li><a href="SQLite3/Statement.html#method-i-column_decltype">#column_decltype &mdash; SQLite3::Statement</a></li>
+    
+      <li><a href="SQLite3/Statement.html#method-i-column_name">#column_name &mdash; SQLite3::Statement</a></li>
+    
+      <li><a href="SQLite3/ResultSet.html#method-i-columns">#columns &mdash; SQLite3::ResultSet</a></li>
+    
+      <li><a href="SQLite3/Statement.html#method-i-columns">#columns &mdash; SQLite3::Statement</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-commit">#commit &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-complete-3F">#complete? &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Database/FunctionProxy.html#method-i-count">#count &mdash; SQLite3::Database::FunctionProxy</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-create_aggregate">#create_aggregate &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-create_aggregate_handler">#create_aggregate_handler &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-create_function">#create_function &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Pragmas.html#method-i-database_list">#database_list &mdash; SQLite3::Pragmas</a></li>
+    
+      <li><a href="SQLite3/Statement.html#method-i-database_name">#database_name &mdash; SQLite3::Statement</a></li>
+    
+      <li><a href="SQLite3/Pragmas.html#method-i-default_cache_size">#default_cache_size &mdash; SQLite3::Pragmas</a></li>
+    
+      <li><a href="SQLite3/Pragmas.html#method-i-default_cache_size-3D">#default_cache_size= &mdash; SQLite3::Pragmas</a></li>
+    
+      <li><a href="SQLite3/Pragmas.html#method-i-default_synchronous">#default_synchronous &mdash; SQLite3::Pragmas</a></li>
+    
+      <li><a href="SQLite3/Pragmas.html#method-i-default_synchronous-3D">#default_synchronous= &mdash; SQLite3::Pragmas</a></li>
+    
+      <li><a href="SQLite3/Pragmas.html#method-i-default_temp_store">#default_temp_store &mdash; SQLite3::Pragmas</a></li>
+    
+      <li><a href="SQLite3/Pragmas.html#method-i-default_temp_store-3D">#default_temp_store= &mdash; SQLite3::Pragmas</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-define_aggregator">#define_aggregator &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-define_function">#define_function &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Statement.html#method-i-done-3F">#done? &mdash; SQLite3::Statement</a></li>
+    
+      <li><a href="SQLite3/ResultSet.html#method-i-each">#each &mdash; SQLite3::ResultSet</a></li>
+    
+      <li><a href="SQLite3/Statement.html#method-i-each">#each &mdash; SQLite3::Statement</a></li>
+    
+      <li><a href="SQLite3/ResultSet.html#method-i-each_hash">#each_hash &mdash; SQLite3::ResultSet</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-enable_load_extension">#enable_load_extension &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-encoding">#encoding &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/ResultSet.html#method-i-eof-3F">#eof? &mdash; SQLite3::ResultSet</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-errcode">#errcode &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-errmsg">#errmsg &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Statement.html#method-i-execute">#execute &mdash; SQLite3::Statement</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-execute">#execute &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Statement.html#method-i-execute-21">#execute! &mdash; SQLite3::Statement</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-execute2">#execute2 &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-execute_batch">#execute_batch &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-finalize">#finalize &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Backup.html#method-i-finish">#finish &mdash; SQLite3::Backup</a></li>
+    
+      <li><a href="SQLite3/Pragmas.html#method-i-foreign_key_list">#foreign_key_list &mdash; SQLite3::Pragmas</a></li>
+    
+      <li><a href="SQLite3/Pragmas.html#method-i-full_column_names">#full_column_names &mdash; SQLite3::Pragmas</a></li>
+    
+      <li><a href="SQLite3/Pragmas.html#method-i-full_column_names-3D">#full_column_names= &mdash; SQLite3::Pragmas</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-get_first_row">#get_first_row &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-get_first_value">#get_first_value &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Pragmas.html#method-i-index_info">#index_info &mdash; SQLite3::Pragmas</a></li>
+    
+      <li><a href="SQLite3/Pragmas.html#method-i-index_list">#index_list &mdash; SQLite3::Pragmas</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-instance">#instance &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Pragmas.html#method-i-integrity_check">#integrity_check &mdash; SQLite3::Pragmas</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-interrupt">#interrupt &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-last_insert_row_id">#last_insert_row_id &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Value.html#method-i-length">#length &mdash; SQLite3::Value</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-load_extension">#load_extension &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/ResultSet.html#method-i-next">#next &mdash; SQLite3::ResultSet</a></li>
+    
+      <li><a href="SQLite3/ResultSet.html#method-i-next_hash">#next_hash &mdash; SQLite3::ResultSet</a></li>
+    
+      <li><a href="SQLite3/Value.html#method-i-null-3F">#null? &mdash; SQLite3::Value</a></li>
+    
+      <li><a href="SQLite3/Backup.html#method-i-pagecount">#pagecount &mdash; SQLite3::Backup</a></li>
+    
+      <li><a href="SQLite3/Pragmas.html#method-i-parser_trace">#parser_trace &mdash; SQLite3::Pragmas</a></li>
+    
+      <li><a href="SQLite3/Pragmas.html#method-i-parser_trace-3D">#parser_trace= &mdash; SQLite3::Pragmas</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-prepare">#prepare &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-query">#query &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-readonly-3F">#readonly? &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Backup.html#method-i-remaining">#remaining &mdash; SQLite3::Backup</a></li>
+    
+      <li><a href="SQLite3/ResultSet.html#method-i-reset">#reset &mdash; SQLite3::ResultSet</a></li>
+    
+      <li><a href="SQLite3/Statement.html#method-i-reset-21">#reset! &mdash; SQLite3::Statement</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-rollback">#rollback &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Pragmas.html#method-i-schema_cookie">#schema_cookie &mdash; SQLite3::Pragmas</a></li>
+    
+      <li><a href="SQLite3/Pragmas.html#method-i-schema_cookie-3D">#schema_cookie= &mdash; SQLite3::Pragmas</a></li>
+    
+      <li><a href="SQLite3/Database/FunctionProxy.html#method-i-set_error">#set_error &mdash; SQLite3::Database::FunctionProxy</a></li>
+    
+      <li><a href="SQLite3/Backup.html#method-i-step">#step &mdash; SQLite3::Backup</a></li>
+    
+      <li><a href="SQLite3/Statement.html#method-i-step">#step &mdash; SQLite3::Statement</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-step">#step &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Pragmas.html#method-i-synchronous">#synchronous &mdash; SQLite3::Pragmas</a></li>
+    
+      <li><a href="SQLite3/Pragmas.html#method-i-synchronous-3D">#synchronous= &mdash; SQLite3::Pragmas</a></li>
+    
+      <li><a href="SQLite3/Pragmas.html#method-i-table_info">#table_info &mdash; SQLite3::Pragmas</a></li>
+    
+      <li><a href="SQLite3/Pragmas.html#method-i-temp_store">#temp_store &mdash; SQLite3::Pragmas</a></li>
+    
+      <li><a href="SQLite3/Pragmas.html#method-i-temp_store-3D">#temp_store= &mdash; SQLite3::Pragmas</a></li>
+    
+      <li><a href="SQLite3/Value.html#method-i-to_blob">#to_blob &mdash; SQLite3::Value</a></li>
+    
+      <li><a href="String.html#method-i-to_blob">#to_blob &mdash; String</a></li>
+    
+      <li><a href="SQLite3/Value.html#method-i-to_f">#to_f &mdash; SQLite3::Value</a></li>
+    
+      <li><a href="SQLite3/Value.html#method-i-to_i">#to_i &mdash; SQLite3::Value</a></li>
+    
+      <li><a href="SQLite3/Value.html#method-i-to_int64">#to_int64 &mdash; SQLite3::Value</a></li>
+    
+      <li><a href="SQLite3/Value.html#method-i-to_s">#to_s &mdash; SQLite3::Value</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-total_changes">#total_changes &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-trace">#trace &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-transaction">#transaction &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-transaction_active-3F">#transaction_active? &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Translator.html#method-i-translate">#translate &mdash; SQLite3::Translator</a></li>
+    
+      <li><a href="SQLite3/Database.html#method-i-translator">#translator &mdash; SQLite3::Database</a></li>
+    
+      <li><a href="SQLite3/Value.html#method-i-type">#type &mdash; SQLite3::Value</a></li>
+    
+      <li><a href="SQLite3/ResultSet.html#method-i-types">#types &mdash; SQLite3::ResultSet</a></li>
+    
+      <li><a href="SQLite3/Statement.html#method-i-types">#types &mdash; SQLite3::Statement</a></li>
+    
+      <li><a href="SQLite3/Pragmas.html#method-i-user_cookie">#user_cookie &mdash; SQLite3::Pragmas</a></li>
+    
+      <li><a href="SQLite3/Pragmas.html#method-i-user_cookie-3D">#user_cookie= &mdash; SQLite3::Pragmas</a></li>
+    
+      <li><a href="SQLite3/Pragmas.html#method-i-vdbe_trace">#vdbe_trace &mdash; SQLite3::Pragmas</a></li>
+    
+      <li><a href="SQLite3/Pragmas.html#method-i-vdbe_trace-3D">#vdbe_trace= &mdash; SQLite3::Pragmas</a></li>
+    
+  </ul>
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+</body>
+</html>

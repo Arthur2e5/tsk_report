@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <meta content="text/html; charset=GBK" http-equiv="Content-Type" />
+
+  <title>ocra-1.3.6 Documentation</title>
+
+  <link type="text/css" media="screen" href="rdoc.css" rel="stylesheet" />
+
+  <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body class="indexpage">
+
+  
+  <h1>ocra-1.3.6 Documentation</h1>
+
+  
+  <div id="main">
+    
+<ul><li>
+<p><a href="https://github.com/larsch/ocra/">github.com/larsch/ocra/</a></p>
+</li><li>
+<p>Issue tracker: <a
+href="http://github.com/larsch/ocra/issues">github.com/larsch/ocra/issues</a></p>
+</li><li>
+<p>Google Group: <a
+href="http://groups.google.com/group/ruby-ocra">groups.google.com/group/ruby-ocra</a></p>
+</li></ul>
+
+<h2>DESCRIPTION:</h2>
+
+<p>OCRA (One-Click Ruby Application) builds Windows executables from Ruby
+source code. The executable is a self-extracting, self-running executable
+that contains the Ruby interpreter, your source code and any additionally
+needed ruby libraries or DLL.</p>
+
+<h2>FEATURES</h2>
+<ul><li>
+<p>LZMA Compression (optional, default on)</p>
+</li><li>
+<p>Ruby 1.8.7, 1.9.3, 2.0.0 and 2.1.5 support</p>
+</li><li>
+<p>Both windowed/console mode supported</p>
+</li><li>
+<p>Includes gems based on usage, or from a Bundler Gemfile</p>
+</li></ul>
+
+<h2>PROBLEMS &amp; BUG REPORTING:</h2>
+<ul><li>
+<p>Windows support only</p>
+</li></ul>
+
+<p>If you experience problems with OCRA or have found a bug, please use the
+issue tracker on GitHub (<a
+href="http://github.com/larsch/ocra/issues">github.com/larsch/ocra/issues</a>).
+You can also join the Google Group discussion forum to ask questions and
+get help (<a
+href="http://groups.google.com/group/ruby-ocra">groups.google.com/group/ruby-ocra</a>).</p>
+
+<h2>INSTALLATION:</h2>
+
+<p>Gem:</p>
+
+<pre>gem install ocra</pre>
+
+<p>Alternatively you can download the gem at either <a
+href="http://rubygems.org/gems/ocra">rubygems.org/gems/ocra</a> or <a
+href="https://github.com/larsch/ocra/releases/.">github.com/larsch/ocra/releases/.</a></p>
+
+<p>Stand-alone Version: Get ocrasa.rb from <a
+href="https://github.com/larsch/ocra/releases/.">github.com/larsch/ocra/releases/.</a>
+Requires nothing but a working Ruby installation on Windows.</p>
+
+<h2>SYNOPSIS:</h2>
+
+<h3>Building an executable:</h3>
+
+<pre>ocra script.rb</pre>
+
+<p>Will package ※<tt>script.rb</tt>§, the Ruby interpreter and all
+dependencies (gems and DLLs) into an executable named
+※<tt>script.exe</tt>§.</p>
+
+<h3>Command line:</h3>
+
+<pre>ocra [options] script.rb [&lt;other files&gt; ...] [-- &lt;script arguments&gt; ...]</pre>
+
+<h3>Options:</h3>
+
+<pre>ocra --help</pre>
+
+<p><a href="Ocra.html">Ocra</a> options:</p>
+
+<pre>--help             Display this information.
+--quiet            Suppress output while building executable.
+--verbose          Show extra output while building executable.
+--version          Display version number and exit.</pre>
+
+<p>Packaging options:</p>
+
+<pre>--dll dllname      Include additional DLLs from the Ruby bindir.
+--add-all-core     Add all core ruby libraries to the executable.
+--gemfile &lt;file&gt;   Add all gems and dependencies listed in a Bundler Gemfile.
+--no-enc           Exclude encoding support files</pre>
+
+<p>Gem content detection modes:</p>
+
+<pre>  --gem-minimal[=gem1,..]  Include only loaded scripts
+  --gem-guess=[gem1,...]   Include loaded scripts &amp; best guess (DEFAULT)
+  --gem-all[=gem1,..]      Include all scripts &amp; files
+  --gem-full[=gem1,..]     Include EVERYTHING
+  --gem-spec[=gem1,..]     Include files in gemspec (Does not work with Rubygems 1.7+)
+
+minimal: loaded scripts  
+guess: loaded scripts and other files  
+all: loaded scripts, other scripts, other files (except extras)  
+full: Everything found in the gem directory  
+
+  --[no-]gem-scripts[=..]  Other script files than those loaded
+  --[no-]gem-files[=..]    Other files (e.g. data files)
+  --[no-]gem-extras[=..]   Extra files (README, etc.)
+
+scripts: .rb/.rbw files  
+extras: C/C++ sources, object files, test, spec, README  
+files: all other files</pre>
+
+<p>Auto-detection options:</p>
+
+<pre> --no-dep-run       Don't run script.rb to check for dependencies.
+--no-autoload      Don't load/include script.rb's autoloads.
+ --no-autodll       Disable detection of runtime DLL dependencies.</pre>
+
+<p>Output options:</p>
+
+<pre>--output &lt;file&gt;    Name the exe to generate. Defaults to ./&lt;scriptname&gt;.exe.
+--no-lzma          Disable LZMA compression of the executable.
+--innosetup &lt;file&gt; Use given Inno Setup script (.iss) to create an installer.</pre>
+
+<p>Executable options:</p>
+
+<pre>--windows          Force Windows application (rubyw.exe)  
+--console          Force console application (ruby.exe)  
+--chdir-first      When exe starts, change working directory to app dir.  
+--icon &lt;ico&gt;       Replace icon with a custom one.  
+--debug            Executable will be verbose.  
+--debug-extract    Executable will unpack to local dir and not delete after.</pre>
+
+<h3>Compilation:</h3>
+<ul><li>
+<p>OCRA will load your script (using <tt>Kernel#load</tt>) and build the
+executable when it exits.</p>
+</li><li>
+<p>Your program should ＆require＊ all necessary files when invoked without
+arguments, so OCRA can detect all dependencies.</p>
+</li><li>
+<p>DLLs are detected automatically but only those located in your Ruby
+installation are included.</p>
+</li><li>
+<p>.rb files will become console applications. .rbw files will become windowed
+application (without a console window popping up). Alternatively, use the
+※<tt>--console</tt>§ or ※<tt>--windows</tt>§ options.</p>
+</li></ul>
+
+<h3>Running your application:</h3>
+<ul><li>
+<p>The ＆current working directory＊ is not changed by OCRA when running your
+application. You must change to the installation or temporary directory
+yourself. See also below.</p>
+</li><li>
+<p>When the application is running, the OCRA_EXECUTABLE environment variable
+points to the .exe (with full path).</p>
+</li><li>
+<p>The temporary location of the script can be obtained by inspected the $0
+variable.</p>
+</li><li>
+<p>OCRA does not set up the include path. Use <tt>$:.unshift
+File.dirname($0)</tt> at the start of your script if you need to ＆require＊
+additional source files from the same directory as your main script.</p>
+</li></ul>
+
+<h3>Pitfalls:</h3>
+<ul><li>
+<p>Avoid modifying load paths at run time. Specify load paths using -I or
+RUBYLIB if you must, but don＊t expect OCRA to preserve them for runtime.
+OCRA may pack sources into other directories than you expect.</p>
+</li><li>
+<p>If you use .rbw files or the <tt>--windows</tt> option, then check that
+your application works with rubyw.exe before trying with OCRA.</p>
+</li><li>
+<p>Avoid absolute paths in your code and when invoking OCRA.</p>
+</li></ul>
+
+<h2>REQUIREMENTS:</h2>
+<ul><li>
+<p>Windows</p>
+</li><li>
+<p>Working Ruby installation. <a href="Ocra.html">Ocra</a> is tested with
+RubyInstaller 1.8.7p374, 1.9.3p545, and 2.0.0p481 (32 and 64 bit).</p>
+</li><li>
+<p>MinGW Installation (when working with the source code only)</p>
+</li></ul>
+
+<h3>Stand-alone version</h3>
+
+<p>Get ocrasa.rb from <a
+href="http://rubyforge.org/frs/?group_id=8185">rubyforge.org/frs/?group_id=8185</a>.
+Requires nothing but a working Ruby installation on Windows.</p>
+
+<h2>TECHNICAL DETAILS</h2>
+
+<p>OCRA first runs the target script in order to detect any files that are
+loaded and used at runtime (Using <tt>Kernel#require</tt> and
+<tt>Kernel#load</tt>).</p>
+
+<p>OCRA embeds everything needed to run a Ruby script into a single executable
+file. The file contains the .exe stub which is compiled from C-code, and a
+custom opcode format containing instructions to create directories, save
+files, set environment variables and run programs. The OCRA script
+generates this executable and the instructions to be run when it is
+launched.</p>
+
+<p>When executed, the OCRA stub extracts the Ruby interpreter and your scripts
+into a temporary directory. The directory will contains the same directory
+layout as your Ruby installlation. The source files for your application
+will be put in the ＆src＊ subdirectory.</p>
+
+<h3>Libraries</h3>
+
+<p>Any code that is loaded through <tt>Kernel#require</tt> when your script is
+executed will be included in the OCRA executable. Conditionally loaded code
+will not be loaded and included in the executable unless the code is
+actually run when OCRA invokes your script. Otherwise, OCRA won＊t know
+about it and will not include the source files.</p>
+
+<p>RubyGems are handled specially. Whenever a file from a Gem is detected,
+OCRA will attempt to include all the required files from that specific Gem,
+expect some unlikely needed files such as readme＊s and other documentation.
+This behaviour can be controlled by using the 每gem-* options. Behaviour can
+be changed for all gems or specific gems using 每gem-*=gemname.</p>
+
+<p>Libraries found in non-standard path (for example, if you invoke OCRA with
+※ruby -I some/path§) will be placed into the site dir (lib/ruby/site_ruby).
+Avoid changing <tt>$LOAD_PATH</tt> or <tt>$:</tt> from your script to
+include paths outside your source tree, since OCRA may place the files
+elsewhere when extracted into the temporary directory.</p>
+
+<p>In case your script (or any of its dependencies) sets up autoloaded module
+using <tt>Kernel#autoload</tt>, OCRA will automatically try to load them to
+ensure that they are all included in the executable. Modules that doesn＊t
+exist will be ignored (a warning will be logged).</p>
+
+<p>Dynamic link libraries (.dll files, for example WxWidgets, or other source
+files) will be detected and included by OCRA.</p>
+
+<h3>Including libraries non-automatically</h3>
+
+<p>If an application or framework is complicated enough that it tends to
+confuse Ocra＊s automatic dependency resolution, then you can use other
+means to specify what needs to be packaged with your app.</p>
+
+<p>To disable automatic dependency resolution, use the 每no-dep-run option;
+with it, <a href="Ocra.html">Ocra</a> will skip executing your program
+during the build process. This on the other hand requires using 每gem-full
+option (see more below); otherwise <a href="Ocra.html">Ocra</a> will not
+include all the necessary files for the gems.</p>
+
+<p>You will also probably need to use the 每add-all-core option to include the
+Ruby core libraries.</p>
+
+<p>If your app uses gems, then you can specify them in a Bundler (<a
+href="http://gembundler.com">gembundler.com</a>) Gemfile, then use the
+每gemfile option to supply it to <a href="Ocra.html">Ocra</a>. <a
+href="Ocra.html">Ocra</a> will automatically include all gems specified,
+and all their dependencies.</p>
+
+<p>(Note: This assumes that the gems are installed in your system, <b>not</b>
+locally packaged inside the app directory by ※bundle package§)</p>
+
+<p>These options are particularly useful for packaging Rails applications. 
+For example, to package a Rails 3 app in the directory ※someapp§ and create
+an exe named ※someapp.exe§, without actually running the app during the
+build, you could use the following command:</p>
+
+<pre>ocra someapp/script/rails someapp --output someapp.exe --add-all-core \
+--gemfile someapp/Gemfile --no-dep-run --gem-full --chdir-first -- server</pre>
+
+<p>Note the space between ※每§ and ※server§! It＊s important; ※server§ is an
+argument to be passed to rails when the script is ran.</p>
+
+<p>Rails 2 apps can be packaged similarly, though you will have to integrate
+them with Bundler (<a
+href="http://gembundler.com/rails23.html">gembundler.com/rails23.html</a>)
+first.</p>
+
+<h3>Gem handling</h3>
+
+<p>By default, <a href="Ocra.html">Ocra</a> includes all scripts that are
+loaded by your script when it is run before packaging. <a
+href="Ocra.html">Ocra</a> detects which gems are using and includes any
+additional non-script files from those gems, except trivial files such as
+C/C++ source code, object files, READMEs, unit tests, specs, etc.</p>
+
+<p>This behaviour can be changed by using the 每gem-* options. There are four
+possible modes:</p>
+
+<pre>minimal: Include only loaded scripts
+guess: Include loaded scripts and important files (DEFAULT)
+all: Include all scripts and important files
+full: Include all files</pre>
+
+<p>If you find that files are missing from the resulting executable, try first
+with 每gem-all=gemname for the gem that is missing, and if that does not
+work, try 每gem-full=gemname. The paranoid can use 每gem-full to include all
+files for all required gems.</p>
+
+<h3>Creating an installer for your application</h3>
+
+<p>To make your application start up quicker, or to allow it to keep files in
+its application directory between runs, or if you just want to make your
+program seem more like a ※regular§ Windows application, you can have <a
+href="Ocra.html">Ocra</a> generate an installer for your app with the free
+Inno Setup software.</p>
+
+<p>You will first have to download and install Inno Setup 5 or later, and also
+add its directory to your PATH (so that <a href="Ocra.html">Ocra</a> can
+find the ISCC compiler program). Once you＊ve done that, you can use the
+每innosetup option to <a href="Ocra.html">Ocra</a> to supply an Inno Setup
+script. Do not add any [Files] or [Dirs] sections to the script; <a
+href="Ocra.html">Ocra</a> will figure those out itself.</p>
+
+<p>To continue the Rails example above, let＊s package the Rails 3 app into an
+installer. Save the following as ※<tt>someapp.iss</tt>§:</p>
+
+<pre>[Setup]
+AppName=SomeApp
+AppVersion=0.1
+DefaultDirName={pf}\SomeApp
+DefaultGroupName=SomeApp
+OutputBaseFilename=SomeAppInstaller
+
+[Icons]
+Name: &quot;{group}\SomeApp&quot;; Filename: &quot;{app}\someapp.exe&quot;
+Name: &quot;{group}\Uninstall SomeApp&quot;; Filename: &quot;{uninstallexe}&quot;</pre>
+
+<p>Then, run <a href="Ocra.html">Ocra</a> with this command:</p>
+
+<pre>ocra someapp/script/rails someapp --output someapp.exe --add-all-core \
+--gemfile someapp/Gemfile --no-dep-run --gem-full --chdir-first --no-lzma \
+--innosetup someapp.iss -- server</pre>
+
+<p>If all goes well, a file named ※SomeAppInstaller.exe§ will be placed into
+the Output directory.</p>
+
+<h3>Environment variables</h3>
+
+<p>OCRA executables clear the RUBYLIB environment variable before your script
+is launched. This is done to ensure that your script does not use load
+paths from the end user＊s Ruby installation.</p>
+
+<p>OCRA executables set the RUBYOPT environment variable to the value it had
+when you invoked OCRA. For example, if you had ※RUBYOPT=rubygems§ on your
+build PC, OCRA ensures that it is also set on PC＊s running the executables.</p>
+
+<p>OCRA executables set OCRA_EXECUTABLE to the full path of the executable,
+for example</p>
+
+<pre>ENV[&quot;OCRA_EXECUTABLE&quot;] # =&gt; C:\Program Files\MyApp\MyApp.exe</pre>
+
+<h3>Working directory</h3>
+
+<p>The OCRA executable does not change the working directory when it is
+launched, unless you use the ※<tt>--chdir-first</tt>§ option.</p>
+
+<p>You should not assume that the current working directory when invoking an
+executable built with .exe is the location of the source script. It can be
+the directory where the executable is placed (when invoked through the
+Windows Explorer), the users＊ current working directory (when invoking from
+the Command Prompt), or even <tt>C:\WINDOWS\SYSTEM32</tt> when the
+executable is invoked through a file association.</p>
+
+<p>With the ※<tt>--chdir-first</tt>§ option, the working directory will always
+be the common parent directory of your source files. This should be fine
+for most applications. However, if your application is designed to run from
+the command line and take filenames as arguments, then you cannot use this
+option.</p>
+
+<p>If you wish to maintain the user＊s working directory, but need to ＆require＊
+additional Ruby scripts from the source directory, you can add the
+following line to your script:</p>
+
+<pre>$LOAD_PATH.unshift File.dirname($0)</pre>
+
+<h3>Load path mangling</h3>
+
+<p>Adding paths to <tt>$LOAD_PATH</tt> or <tt>$:</tt> at runtime is not
+recommended. Adding relative load paths depends on the working directory
+being the same as where the script is located (See above). If you have
+additional library files in directories below the directory containing your
+source script you can use this idiom:</p>
+
+<pre>$LOAD_PATH.unshift File.join(File.dirname($0), 'path/to/script')</pre>
+
+<h3>Detecting OCRA</h3>
+
+<p>You can detect whether OCRA is currently building your script by looking
+for the ＆Ocra＊ constant. If it is defined, OCRA is currenly building the
+executable from your script. For example, you can use this to avoid opening
+a GUI window when compiling executables:</p>
+
+<pre>app = MyApp.new
+if not defined?(Ocra)
+  app.main_loop
+end</pre>
+
+<h3>Additional files and resources</h3>
+
+<p>You can add additional files to the OCRA executable (for example images) by
+appending them to the command line. They should be placed in the source
+directory with your main script (or a subdirectory).</p>
+
+<pre>ocra mainscript.rb someimage.jpeg docs/document.txt</pre>
+
+<p>This will create the following layout in the temporary directory when your
+program is executed:</p>
+
+<pre>src/mainscript.rb
+src/someimage.jpeg
+src/docs/document.txt</pre>
+
+<p>Both files, directoriess and glob patterns can be specified on the command
+line. Files will be added as-is. If a directory is specified, OCRA will
+include all files found below that directory. Glob patterns (See Dir.glob)
+can be used to specify a specific set of files, for example:</p>
+
+<pre>ocra script.rb assets/**/*.png</pre>
+
+<h3>Command Line Arguments</h3>
+
+<p>To pass command line argument to your script (both while building and when
+run from the resulting executable), specify them after a ※<tt>--</tt>§
+marker. For example:</p>
+
+<pre>ocra script.rb -- --some-options=value</pre>
+
+<p>This will pass ※<tt>--some-options=value</tt>§ to the script when build and
+when running the executable. Any extra argument specified by the user when
+invoking the executable will be appended after the compile-time arguments.</p>
+
+<h3>Window/Console</h3>
+
+<p>By default, OCRA builds console application from .rb-files and windowed
+applications (without console window) from .rbw-files.</p>
+
+<p>Ruby on Windows provides two executables: ruby.exe is a console mode
+application and rubyw.exe is a windowed application which does not bring up
+a console window when launched using the Windows Explorer. By default, or
+if the ※<tt>--console</tt>§ option is used, OCRA will use the console
+runtime (ruby.exe). OCRA will automatically select the windowed runtime
+when your script has the ※.rbw§ extension, or if you specify the
+※<tt>--windows</tt>§ command line option.</p>
+
+<p>If your application works in console mode but not in windowed mode, first
+check if your script works without OCRA using rubyw.exe. A script that
+prints to standard output (using puts, print etc.) will eventually cause an
+exception when run with rubyw.exe (when the IO buffers run full).</p>
+
+<p>You can also try wrapping your script in an exception handler that logs any
+errors to a file:</p>
+
+<pre>begin
+  # your script here
+rescue Exception =&gt; e
+  File.open(&quot;except.log&quot;) do |f|
+    f.puts e.inspect
+    f.puts e.backtrace
+  end
+end</pre>
+
+<h2>CREDITS:</h2>
+
+<p>Thanks for Igor Pavlov for the LZMA compressor and decompressor. The source
+code used was place into Public Domain by Igor Pavlov.</p>
+
+<p>Erik Veenstra for rubyscript2exe which provided inspiration.</p>
+
+<p>Dice for the default .exe icon (vit-ruby.ico, <a
+href="http://ruby.morphball.net/vit-ruby-ico_en.html">ruby.morphball.net/vit-ruby-ico_en.html</a>)</p>
+
+<h2>LICENSE:</h2>
+
+<p>(The MIT License)</p>
+
+<p>Copyright (c) 2009-2010 Lars Christensen</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the ＆Software＊),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED ＆AS IS＊, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.</p>
+
+  </div>
+  
+
+  
+  
+  <h2>Files</h2>
+  <ul>
+    
+      <li class="file"><a href="History_txt.html">History.txt</a></li>
+    
+      <li class="file"><a href="Manifest_txt.html">Manifest.txt</a></li>
+    
+      <li class="file"><a href="README_rdoc.html">README.rdoc</a></li>
+    
+  </ul>
+  
+
+  <h2 id="classes">Classes/Modules</h2>
+  <ul>
+    
+    <li class="class"><a href="Ocra.html">Ocra</a></li>
+    
+  </ul>
+
+  <h2 id="methods">Methods</h2>
+  <ul>
+    
+  </ul>
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+</body>
+</html>

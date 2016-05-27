@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="IBM437"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=IBM437" http-equiv="Content-Type" />
+
+  <title>Class: SQLite3::Backup</title>
+
+  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="class">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../ext/sqlite3/backup_c.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="ext/sqlite3/backup.c">ext/sqlite3/backup.c</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">Object</p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-i-finish">#finish</a></li>
+          
+          <li><a href="#method-i-pagecount">#pagecount</a></li>
+          
+          <li><a href="#method-i-remaining">#remaining</a></li>
+          
+          <li><a href="#method-i-step">#step</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../API_CHANGES_rdoc.html">API_CHANGES.rdoc</a></li>
+        
+          <li class="file"><a href="../CHANGELOG_rdoc.html">CHANGELOG.rdoc</a></li>
+        
+          <li class="file"><a href="../Manifest_txt.html">Manifest.txt</a></li>
+        
+          <li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../SQLite3.html">SQLite3</a></li>
+        
+          <li><a href="../SQLite3/AbortException.html">SQLite3::AbortException</a></li>
+        
+          <li><a href="../SQLite3/AuthorizationException.html">SQLite3::AuthorizationException</a></li>
+        
+          <li><a href="../SQLite3/Backup.html">SQLite3::Backup</a></li>
+        
+          <li><a href="../SQLite3/Blob.html">SQLite3::Blob</a></li>
+        
+          <li><a href="../SQLite3/BusyException.html">SQLite3::BusyException</a></li>
+        
+          <li><a href="../SQLite3/CantOpenException.html">SQLite3::CantOpenException</a></li>
+        
+          <li><a href="../SQLite3/Constants.html">SQLite3::Constants</a></li>
+        
+          <li><a href="../SQLite3/Constants/ColumnType.html">SQLite3::Constants::ColumnType</a></li>
+        
+          <li><a href="../SQLite3/Constants/ErrorCode.html">SQLite3::Constants::ErrorCode</a></li>
+        
+          <li><a href="../SQLite3/Constants/TextRep.html">SQLite3::Constants::TextRep</a></li>
+        
+          <li><a href="../SQLite3/ConstraintException.html">SQLite3::ConstraintException</a></li>
+        
+          <li><a href="../SQLite3/CorruptException.html">SQLite3::CorruptException</a></li>
+        
+          <li><a href="../SQLite3/Database.html">SQLite3::Database</a></li>
+        
+          <li><a href="../SQLite3/Database/FunctionProxy.html">SQLite3::Database::FunctionProxy</a></li>
+        
+          <li><a href="../SQLite3/EmptyException.html">SQLite3::EmptyException</a></li>
+        
+          <li><a href="../SQLite3/Exception.html">SQLite3::Exception</a></li>
+        
+          <li><a href="../SQLite3/FormatException.html">SQLite3::FormatException</a></li>
+        
+          <li><a href="../SQLite3/FullException.html">SQLite3::FullException</a></li>
+        
+          <li><a href="../SQLite3/IOException.html">SQLite3::IOException</a></li>
+        
+          <li><a href="../SQLite3/InternalException.html">SQLite3::InternalException</a></li>
+        
+          <li><a href="../SQLite3/InterruptException.html">SQLite3::InterruptException</a></li>
+        
+          <li><a href="../SQLite3/LockedException.html">SQLite3::LockedException</a></li>
+        
+          <li><a href="../SQLite3/MemoryException.html">SQLite3::MemoryException</a></li>
+        
+          <li><a href="../SQLite3/MismatchException.html">SQLite3::MismatchException</a></li>
+        
+          <li><a href="../SQLite3/MisuseException.html">SQLite3::MisuseException</a></li>
+        
+          <li><a href="../SQLite3/NotADatabaseException.html">SQLite3::NotADatabaseException</a></li>
+        
+          <li><a href="../SQLite3/NotFoundException.html">SQLite3::NotFoundException</a></li>
+        
+          <li><a href="../SQLite3/PermissionException.html">SQLite3::PermissionException</a></li>
+        
+          <li><a href="../SQLite3/Pragmas.html">SQLite3::Pragmas</a></li>
+        
+          <li><a href="../SQLite3/ProtocolException.html">SQLite3::ProtocolException</a></li>
+        
+          <li><a href="../SQLite3/RangeException.html">SQLite3::RangeException</a></li>
+        
+          <li><a href="../SQLite3/ReadOnlyException.html">SQLite3::ReadOnlyException</a></li>
+        
+          <li><a href="../SQLite3/ResultSet.html">SQLite3::ResultSet</a></li>
+        
+          <li><a href="../SQLite3/SQLException.html">SQLite3::SQLException</a></li>
+        
+          <li><a href="../SQLite3/SchemaChangedException.html">SQLite3::SchemaChangedException</a></li>
+        
+          <li><a href="../SQLite3/Statement.html">SQLite3::Statement</a></li>
+        
+          <li><a href="../SQLite3/TooBigException.html">SQLite3::TooBigException</a></li>
+        
+          <li><a href="../SQLite3/Translator.html">SQLite3::Translator</a></li>
+        
+          <li><a href="../SQLite3/UnsupportedException.html">SQLite3::UnsupportedException</a></li>
+        
+          <li><a href="../SQLite3/Value.html">SQLite3::Value</a></li>
+        
+          <li><a href="../SQLite3/VersionProxy.html">SQLite3::VersionProxy</a></li>
+        
+          <li><a href="../String.html">String</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="class">SQLite3::Backup</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">SQLite3::Backup.new(dstdb, dstname, srcdb, srcname)</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+
+          <div class="method-description">
+            
+            <p>Initialize backup the backup.</p>
+
+<p>dstdb:</p>
+
+<pre>the destination SQLite3::Database object.</pre>
+
+<p>dstname:</p>
+
+<pre>the destination's database name.</pre>
+
+<p>srcdb:</p>
+
+<pre>the source SQLite3::Database object.</pre>
+
+<p>srcname:</p>
+
+<pre>the source's database name.</pre>
+
+<p>The database name is "main", "temp", or the name specified in an ATTACH
+statement.</p>
+
+<p>This feature requires SQLite 3.6.11 or later.</p>
+
+<pre>require 'sqlite3'
+sdb = SQLite3::Database.new('src.sqlite3')
+
+ddb = SQLite3::Database.new(':memory:')
+b = SQLite3::Backup.new(ddb, 'main', sdb, 'main')
+p [b.remaining, b.pagecount] # invalid value; for example [0, 0]
+begin
+  p b.step(1) #=&gt; OK or DONE
+  p [b.remaining, b.pagecount]
+end while b.remaining &gt; 0
+b.finish
+
+ddb = SQLite3::Database.new(':memory:')
+b = SQLite3::Backup.new(ddb, 'main', sdb, 'main')
+b.step(-1) #=&gt; DONE
+b.finish</pre>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+<pre>
+static VALUE initialize(VALUE self, VALUE dstdb, VALUE dstname, VALUE srcdb, VALUE srcname)
+{
+  sqlite3BackupRubyPtr ctx;
+  sqlite3RubyPtr ddb_ctx, sdb_ctx;
+  sqlite3_backup *pBackup;
+
+  Data_Get_Struct(self, sqlite3BackupRuby, ctx);
+  Data_Get_Struct(dstdb, sqlite3Ruby, ddb_ctx);
+  Data_Get_Struct(srcdb, sqlite3Ruby, sdb_ctx);
+
+  if(!sdb_ctx-&gt;db)
+    rb_raise(rb_eArgError, &quot;cannot backup from a closed database&quot;);
+  if(!ddb_ctx-&gt;db)
+    rb_raise(rb_eArgError, &quot;cannot backup to a closed database&quot;);
+
+  pBackup = sqlite3_backup_init(ddb_ctx-&gt;db, StringValuePtr(dstname),
+    sdb_ctx-&gt;db, StringValuePtr(srcname));
+  if( pBackup ){
+    ctx-&gt;p = pBackup;
+  }
+  else {
+    CHECK(ddb_ctx-&gt;db, sqlite3_errcode(ddb_ctx-&gt;db));
+  }
+
+  return self;
+}</pre>
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="finish-method" class="method-detail ">
+          <a name="method-i-finish"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">SQLite3::Backup#finish</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+
+          <div class="method-description">
+            
+            <p>Destroy the backup object.</p>
+            
+
+            
+            <div class="method-source-code" id="finish-source">
+<pre>
+static VALUE finish(VALUE self)
+{
+  sqlite3BackupRubyPtr ctx;
+
+  Data_Get_Struct(self, sqlite3BackupRuby, ctx);
+  REQUIRE_OPEN_BACKUP(ctx);
+  (void)sqlite3_backup_finish(ctx-&gt;p);
+  ctx-&gt;p = NULL;
+  return Qnil;
+}</pre>
+            </div><!-- finish-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- finish-method -->
+
+      
+        <div id="pagecount-method" class="method-detail ">
+          <a name="method-i-pagecount"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">SQLite3::Backup#pagecount</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+
+          <div class="method-description">
+            
+            <p>Returns the total number of pages in the source database file.</p>
+
+<p>Note that the value is only updated after step() is called, so before
+calling step() returned value is invalid.</p>
+            
+
+            
+            <div class="method-source-code" id="pagecount-source">
+<pre>
+static VALUE pagecount(VALUE self)
+{
+  sqlite3BackupRubyPtr ctx;
+
+  Data_Get_Struct(self, sqlite3BackupRuby, ctx);
+  REQUIRE_OPEN_BACKUP(ctx);
+  return INT2NUM(sqlite3_backup_pagecount(ctx-&gt;p));
+}</pre>
+            </div><!-- pagecount-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- pagecount-method -->
+
+      
+        <div id="remaining-method" class="method-detail ">
+          <a name="method-i-remaining"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">SQLite3::Backup#remaining</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+
+          <div class="method-description">
+            
+            <p>Returns the number of pages still to be backed up.</p>
+
+<p>Note that the value is only updated after step() is called, so before
+calling step() returned value is invalid.</p>
+            
+
+            
+            <div class="method-source-code" id="remaining-source">
+<pre>
+static VALUE remaining(VALUE self)
+{
+  sqlite3BackupRubyPtr ctx;
+
+  Data_Get_Struct(self, sqlite3BackupRuby, ctx);
+  REQUIRE_OPEN_BACKUP(ctx);
+  return INT2NUM(sqlite3_backup_remaining(ctx-&gt;p));
+}</pre>
+            </div><!-- remaining-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- remaining-method -->
+
+      
+        <div id="step-method" class="method-detail ">
+          <a name="method-i-step"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">SQLite3::Backup#step(nPage)</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+
+          <div class="method-description">
+            
+            <p>Copy database pages up to <tt>nPage</tt>. If negative, copy all remaining
+source pages.</p>
+
+<p>If all pages are copied, it returns SQLite3::Constants::ErrorCode::DONE.
+When coping is not done, it returns SQLite3::Constants::ErrorCode::OK. When
+some errors occur, it returns the error code.</p>
+            
+
+            
+            <div class="method-source-code" id="step-source">
+<pre>
+static VALUE step(VALUE self, VALUE nPage)
+{
+  sqlite3BackupRubyPtr ctx;
+  int status;
+
+  Data_Get_Struct(self, sqlite3BackupRuby, ctx);
+  REQUIRE_OPEN_BACKUP(ctx);
+  status = sqlite3_backup_step(ctx-&gt;p, NUM2INT(nPage));
+  return INT2NUM(status);
+}</pre>
+            </div><!-- step-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- step-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

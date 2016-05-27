@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="IBM437"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=IBM437" http-equiv="Content-Type" />
+
+  <title>Class: SQLite3::Translator</title>
+
+  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="class">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../lib/sqlite3/translator_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/sqlite3/translator.rb">lib/sqlite3/translator.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">Object</p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-i-add_translator">#add_translator</a></li>
+          
+          <li><a href="#method-i-translate">#translate</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../API_CHANGES_rdoc.html">API_CHANGES.rdoc</a></li>
+        
+          <li class="file"><a href="../CHANGELOG_rdoc.html">CHANGELOG.rdoc</a></li>
+        
+          <li class="file"><a href="../Manifest_txt.html">Manifest.txt</a></li>
+        
+          <li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../SQLite3.html">SQLite3</a></li>
+        
+          <li><a href="../SQLite3/AbortException.html">SQLite3::AbortException</a></li>
+        
+          <li><a href="../SQLite3/AuthorizationException.html">SQLite3::AuthorizationException</a></li>
+        
+          <li><a href="../SQLite3/Backup.html">SQLite3::Backup</a></li>
+        
+          <li><a href="../SQLite3/Blob.html">SQLite3::Blob</a></li>
+        
+          <li><a href="../SQLite3/BusyException.html">SQLite3::BusyException</a></li>
+        
+          <li><a href="../SQLite3/CantOpenException.html">SQLite3::CantOpenException</a></li>
+        
+          <li><a href="../SQLite3/Constants.html">SQLite3::Constants</a></li>
+        
+          <li><a href="../SQLite3/Constants/ColumnType.html">SQLite3::Constants::ColumnType</a></li>
+        
+          <li><a href="../SQLite3/Constants/ErrorCode.html">SQLite3::Constants::ErrorCode</a></li>
+        
+          <li><a href="../SQLite3/Constants/TextRep.html">SQLite3::Constants::TextRep</a></li>
+        
+          <li><a href="../SQLite3/ConstraintException.html">SQLite3::ConstraintException</a></li>
+        
+          <li><a href="../SQLite3/CorruptException.html">SQLite3::CorruptException</a></li>
+        
+          <li><a href="../SQLite3/Database.html">SQLite3::Database</a></li>
+        
+          <li><a href="../SQLite3/Database/FunctionProxy.html">SQLite3::Database::FunctionProxy</a></li>
+        
+          <li><a href="../SQLite3/EmptyException.html">SQLite3::EmptyException</a></li>
+        
+          <li><a href="../SQLite3/Exception.html">SQLite3::Exception</a></li>
+        
+          <li><a href="../SQLite3/FormatException.html">SQLite3::FormatException</a></li>
+        
+          <li><a href="../SQLite3/FullException.html">SQLite3::FullException</a></li>
+        
+          <li><a href="../SQLite3/IOException.html">SQLite3::IOException</a></li>
+        
+          <li><a href="../SQLite3/InternalException.html">SQLite3::InternalException</a></li>
+        
+          <li><a href="../SQLite3/InterruptException.html">SQLite3::InterruptException</a></li>
+        
+          <li><a href="../SQLite3/LockedException.html">SQLite3::LockedException</a></li>
+        
+          <li><a href="../SQLite3/MemoryException.html">SQLite3::MemoryException</a></li>
+        
+          <li><a href="../SQLite3/MismatchException.html">SQLite3::MismatchException</a></li>
+        
+          <li><a href="../SQLite3/MisuseException.html">SQLite3::MisuseException</a></li>
+        
+          <li><a href="../SQLite3/NotADatabaseException.html">SQLite3::NotADatabaseException</a></li>
+        
+          <li><a href="../SQLite3/NotFoundException.html">SQLite3::NotFoundException</a></li>
+        
+          <li><a href="../SQLite3/PermissionException.html">SQLite3::PermissionException</a></li>
+        
+          <li><a href="../SQLite3/Pragmas.html">SQLite3::Pragmas</a></li>
+        
+          <li><a href="../SQLite3/ProtocolException.html">SQLite3::ProtocolException</a></li>
+        
+          <li><a href="../SQLite3/RangeException.html">SQLite3::RangeException</a></li>
+        
+          <li><a href="../SQLite3/ReadOnlyException.html">SQLite3::ReadOnlyException</a></li>
+        
+          <li><a href="../SQLite3/ResultSet.html">SQLite3::ResultSet</a></li>
+        
+          <li><a href="../SQLite3/SQLException.html">SQLite3::SQLException</a></li>
+        
+          <li><a href="../SQLite3/SchemaChangedException.html">SQLite3::SchemaChangedException</a></li>
+        
+          <li><a href="../SQLite3/Statement.html">SQLite3::Statement</a></li>
+        
+          <li><a href="../SQLite3/TooBigException.html">SQLite3::TooBigException</a></li>
+        
+          <li><a href="../SQLite3/Translator.html">SQLite3::Translator</a></li>
+        
+          <li><a href="../SQLite3/UnsupportedException.html">SQLite3::UnsupportedException</a></li>
+        
+          <li><a href="../SQLite3/Value.html">SQLite3::Value</a></li>
+        
+          <li><a href="../SQLite3/VersionProxy.html">SQLite3::VersionProxy</a></li>
+        
+          <li><a href="../String.html">String</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="class">SQLite3::Translator</h1>
+
+    <div id="description" class="description">
+      
+<p>The <a href="Translator.html">Translator</a> class encapsulates the logic
+and callbacks necessary for converting string data to a value of some
+specified type. Every <a href="Database.html">Database</a> instance may
+have a <a href="Translator.html">Translator</a> instance, in order to
+assist in type translation (Database#type_translation).</p>
+
+<p>Further, applications may define their own custom type translation logic by
+registering translator blocks with the corresponding database's translator
+instance (<a
+href="Database.html#method-i-translator">Database#translator</a>).</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">new</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Create a new <a href="Translator.html">Translator</a> instance. It will be
+preinitialized with default translators for most SQL data types.</p>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+<pre>
+<span class="ruby-comment"># File lib/sqlite3/translator.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
+  <span class="ruby-ivar">@translators</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>( <span class="ruby-identifier">proc</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">type</span>,<span class="ruby-identifier">value</span><span class="ruby-operator">|</span> <span class="ruby-identifier">value</span> } )
+  <span class="ruby-ivar">@type_name_cache</span> = {}
+  <span class="ruby-identifier">register_default_translators</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="add_translator-method" class="method-detail ">
+          <a name="method-i-add_translator"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">add_translator</span><span
+              class="method-args">( type )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Add a new translator block, which will be invoked to process type
+translations to the given type. The type should be an SQL datatype, and may
+include parentheses (i.e., "VARCHAR(30)"). However, any parenthetical
+information is stripped off and discarded, so type translation decisions
+are made solely on the "base" type name.</p>
+
+<p>The translator block itself should accept two parameters, "type" and
+"value". In this case, the "type" is the full type name (including
+parentheses), so the block itself may include logic for changing how a type
+is translated based on the additional data. The "value" parameter is the
+(string) data to convert.</p>
+
+<p>The block should return the translated value.</p>
+            
+
+            
+            <div class="method-source-code" id="add_translator-source">
+<pre>
+<span class="ruby-comment"># File lib/sqlite3/translator.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_translator</span>( <span class="ruby-identifier">type</span>, &amp;<span class="ruby-identifier">block</span> ) <span class="ruby-comment"># :yields: type, value</span>
+  <span class="ruby-identifier">warn</span>(<span class="ruby-string">#{caller[0]} is calling `add_translator`.Built in translators are deprecated and will be removed in version 2.0.0</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">$VERBOSE</span>
+  <span class="ruby-ivar">@translators</span>[ <span class="ruby-identifier">type_name</span>( <span class="ruby-identifier">type</span> ) ] = <span class="ruby-identifier">block</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- add_translator-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- add_translator-method -->
+
+      
+        <div id="translate-method" class="method-detail ">
+          <a name="method-i-translate"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">translate</span><span
+              class="method-args">( type, value )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Translate the given string value to a value of the given type. In the
+absense of an installed translator block for the given type, the value
+itself is always returned. Further, <tt>nil</tt> values are never
+translated, and are always passed straight through regardless of the type
+parameter.</p>
+            
+
+            
+            <div class="method-source-code" id="translate-source">
+<pre>
+<span class="ruby-comment"># File lib/sqlite3/translator.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">translate</span>( <span class="ruby-identifier">type</span>, <span class="ruby-identifier">value</span> )
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-comment"># FIXME: this is a hack to support Sequel</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-node">%{ datetime timestamp }</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">type</span>.<span class="ruby-identifier">downcase</span>)
+      <span class="ruby-ivar">@translators</span>[ <span class="ruby-identifier">type_name</span>( <span class="ruby-identifier">type</span> ) ].<span class="ruby-identifier">call</span>( <span class="ruby-identifier">type</span>, <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span> )
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-ivar">@translators</span>[ <span class="ruby-identifier">type_name</span>( <span class="ruby-identifier">type</span> ) ].<span class="ruby-identifier">call</span>( <span class="ruby-identifier">type</span>, <span class="ruby-identifier">value</span> )
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- translate-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- translate-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+
