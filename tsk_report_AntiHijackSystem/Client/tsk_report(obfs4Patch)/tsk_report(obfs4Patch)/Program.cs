@@ -13,14 +13,18 @@ namespace tsk_report_obfs4Patch_
     {
         static void Main(string[] args)
         {
-            Shell.StartProcess_HideWindow.Simple("notepad");
-            Thread.Sleep(2000);
-            Console.WriteLine("okay");
-            Console.ReadLine();
+            string tsk_arguments = LibTskReportObfs4.Shell.ProcessArguments.PassingArgumentsArrayToTskReport(args);
 
-            IntPtr hwndnotepad = User32.FindWindow("Notepad", "无标题 - 记事本");
-            Shell.WindowControl.ShowWindowAfterHiding(hwndnotepad);
-            Console.ReadLine();
+            Shell.StartProcess_HideWindow.Simple("bin\\ptproxy-4jvg5d.exe", "bin\\tenco.json");
+            Console.WriteLine("Loading obfs4 proxy...");
+            // wait fully obfs4proxy load
+            Thread.Sleep(2000);
+
+            Shell.StartProcess.Standard("tsk_report_core.exe", tsk_arguments, false);
+            Console.WriteLine("tsk_report has exit.\nEnd obfs4 proxy now.");
+            Shell.StartProcess.Simple("cmd.exe", "/c bin\\cmd\\quitAfter.cmd");
+
+            Environment.Exit(1);
         }
     }
 }
