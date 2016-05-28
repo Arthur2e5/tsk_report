@@ -1,0 +1,7 @@
+Windows Server:
+
+python ptproxy.py server_config_tenco\tenco.info.json
+python ptproxy.py server_config_tenco\static.tenco.info.json
+
+Request listen on 33523 and 33524 port.
+Python3.

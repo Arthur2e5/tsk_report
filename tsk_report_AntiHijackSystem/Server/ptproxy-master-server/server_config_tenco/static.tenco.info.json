@@ -1,0 +1,11 @@
+{
+    "role": "server",
+    "state": ".",
+    "local": "202.172.26.14:80",
+    "server": "0.0.0.0:33524",
+    "ptexec": "obfs4proxy -logLevel=ERROR -enableLogging=true",
+    "ptname": "obfs4",
+    "ptargs": "cert=AAAAAAAAAAAAAAAAAAAAAAAAAAAAA+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA;iat-mode=0",
+    "ptserveropt": "",
+    "ptproxy": ""
+}

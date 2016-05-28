@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="IBM437"?>
+<?xml version="1.0" encoding="GBK"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <meta content="text/html; charset=IBM437" http-equiv="Content-Type" />
+  <meta content="text/html; charset=GBK" http-equiv="Content-Type" />
 
   <title>Class: SQLite3::Database</title>
 
@@ -342,8 +342,8 @@ various pragma convenience methods.</p>
 services as well, by which the <a href="../SQLite3.html">SQLite3</a> data
 types (which are all represented as strings) may be converted into their
 corresponding types (as defined in the schemas for their tables). This
-translation only occurs when querying data from the database--insertions
-and updates are all still typeless.</p>
+translation only occurs when querying data from the database每insertions and
+updates are all still typeless.</p>
 
 <p>Furthermore, the <a href="Database.html">Database</a> class has been
 designed to work well with the ArrayFields module from Ara Howard. If you
@@ -969,7 +969,7 @@ static VALUE set_busy_timeout(VALUE self, VALUE timeout)
           <div class="method-description">
             
             <p>Returns the number of changes made to this database instance by the last
-operation performed. Note that a "delete from table" without a where clause
+operation performed. Note that a ※delete from table§ without a where clause
 will not affect this value.</p>
             
 
@@ -1098,7 +1098,7 @@ static VALUE closed_p(VALUE self)
           <div class="method-description">
             
             <p>Add a collation with name <tt>name</tt>, and a <tt>comparator</tt> object. 
-The <tt>comparator</tt> object should implement a method called "compare"
+The <tt>comparator</tt> object should implement a method called ※compare§
 that takes two parameters and returns an integer less than, equal to, or
 greater than 0.</p>
             
@@ -1226,7 +1226,7 @@ static VALUE complete_p(VALUE UNUSED(self), VALUE sql)
             <p>Creates a new aggregate function for use in SQL statements. Aggregate
 functions are functions that apply over every row in the result set,
 instead of over just a single row. (A very common aggregate function is the
-"count" function, for determining the number of rows that match a query.)</p>
+※count§ function, for determining the number of rows that match a query.)</p>
 
 <p>The new function will be added as <tt>name</tt>, with the given
 <tt>arity</tt>. (For variable arity functions, use -1 for the arity.)</p>
@@ -1234,7 +1234,7 @@ instead of over just a single row. (A very common aggregate function is the
 <p>The <tt>step</tt> parameter must be a proc object that accepts as its first
 parameter a <a href="Database/FunctionProxy.html">FunctionProxy</a>
 instance (representing the function invocation), with any subsequent
-parameters (up to the function's arity). The <tt>step</tt> callback will be
+parameters (up to the function＊s arity). The <tt>step</tt> callback will be
 invoked once for each row of the result set.</p>
 
 <p>The <tt>finalize</tt> parameter must be a <tt>proc</tt> object that accepts
@@ -1331,7 +1331,7 @@ for a more object-oriented approach to aggregate functions.</p>
             <p>This is another approach to creating an aggregate function (see <a
 href="Database.html#method-i-create_aggregate">create_aggregate</a>).
 Instead of explicitly specifying the name, callbacks, arity, and type, you
-specify a factory object (the "handler") that knows how to obtain all of
+specify a factory object (the ※handler§) that knows how to obtain all of
 that information. The handler should respond to the following messages:</p>
 <table class="rdoc-list"><tr><td class="rdoc-term"><p><tt>arity</tt></p></td>
 <td>
@@ -1354,12 +1354,12 @@ described above), must respond to the following messages:</p>
 <table class="rdoc-list"><tr><td class="rdoc-term"><p><tt>step</tt></p></td>
 <td>
 <p>this is the method that will be called for each step of the aggregate
-function's evaluation. It should implement the same signature as the
+function＊s evaluation. It should implement the same signature as the
 <tt>step</tt> callback for <a
 href="Database.html#method-i-create_aggregate">create_aggregate</a>.</p>
 </td></tr><tr><td class="rdoc-term"><p><tt>finalize</tt></p></td>
 <td>
-<p>this is the method that will be called to finalize the aggregate function's
+<p>this is the method that will be called to finalize the aggregate function＊s
 evaluation. It should implement the same signature as the <tt>finalize</tt>
 callback for <a
 href="Database.html#method-i-create_aggregate">create_aggregate</a>.</p>
@@ -1445,9 +1445,9 @@ puts db.get_first_value( &quot;select lengths(name) from A&quot; )</pre>
 <tt>name</tt>, with the given <tt>arity</tt>. (For variable arity
 functions, use -1 for the arity.)</p>
 
-<p>The block should accept at least one parameter--the <a
+<p>The block should accept at least one parameter每the <a
 href="Database/FunctionProxy.html">FunctionProxy</a> instance that wraps
-this function invocation--and any other arguments it needs (up to its
+this function invocation每and any other arguments it needs (up to its
 arity).</p>
 
 <p>The block does not return a value directly. Instead, it will invoke the <a
@@ -1903,7 +1903,7 @@ names of the columns. Subsequent rows correspond to the data from the
 result set.</p>
 
 <p>Thus, even if the query itself returns no rows, this method will always
-return at least one row--the names of the columns.</p>
+return at least one row每the names of the columns.</p>
 
 <p>See also <a href="Database.html#method-i-execute">execute</a>, <a
 href="Database.html#method-i-query">query</a>, and <a
@@ -2622,9 +2622,9 @@ transaction is committed when the block terminates. If the block raises an
 exception, a rollback will be performed instead. Note that if a block is
 given, <a href="Database.html#method-i-commit">commit</a> and <a
 href="Database.html#method-i-rollback">rollback</a> should never be called
-explicitly or you'll get an error when the block terminates.</p>
+explicitly or you＊ll get an error when the block terminates.</p>
 
-<p>If a block is not given, it is the caller's responsibility to end the
+<p>If a block is not given, it is the caller＊s responsibility to end the
 transaction explicitly, either by calling <a
 href="Database.html#method-i-commit">commit</a>, or by calling <a
 href="Database.html#method-i-rollback">rollback</a>.</p>

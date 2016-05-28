@@ -1,2 +1,2 @@
-U:RDoc::Attr[iI"results_as_hash:EFI"&SQLite3::Database#results_as_hash;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"LA boolean that indicates whether rows in result sets should be returned:encoding"IBM437I"?as hashes or not. By default, rows are returned as arrays.;@:
+U:RDoc::Attr[iI"results_as_hash:EFI"&SQLite3::Database#results_as_hash;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"LA boolean that indicates whether rows in result sets should be returned:encoding"GBKI"?as hashes or not. By default, rows are returned as arrays.;@:
 @file0FI"lib/sqlite3/database.rb;@

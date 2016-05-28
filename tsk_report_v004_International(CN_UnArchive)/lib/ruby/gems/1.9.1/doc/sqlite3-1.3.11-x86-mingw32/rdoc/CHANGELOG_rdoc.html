@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <meta content="text/html; charset=IBM437" http-equiv="Content-Type" />
+  <meta content="text/html; charset=GBK" http-equiv="Content-Type" />
 
   <title>File: CHANGELOG.rdoc [sqlite3-1.3.11-x86-mingw32 Documentation]</title>
 
@@ -311,7 +311,7 @@ that created this object.</p>
 <ul><li>
 <p>Fixed a segv on Database.new. Fixes #34 (thanks nobu!)</p>
 </li><li>
-<p>Database error is not reset, so don't check it in Statement#reset!</p>
+<p>Database error is not reset, so don¡¯t check it in Statement#reset!</p>
 </li><li>
 <p>Remove conditional around Bignum statement bindings. Fixes #52. Fixes #56.
 Thank you Evgeny Myasishchev.</p>
@@ -344,7 +344,7 @@ Thanks Hongli Lai.</p>
 <p>Fixed segmentation fault when nil is passed to <a
 href="SQLite3/Statement.html#method-c-new">SQLite3::Statement.new</a></p>
 </li><li>
-<p>Fix extconf's hardcoded path that affected installation on certain systems.</p>
+<p>Fix extconf¡¯s hardcoded path that affected installation on certain systems.</p>
 </li></ul>
 </li></ul>
 
@@ -354,7 +354,7 @@ href="SQLite3/Statement.html#method-c-new">SQLite3::Statement.new</a></p>
 <ul><li>
 <p>Abort on installation if sqlite3_backup_init is missing. Fixes #19</p>
 </li><li>
-<p>Gem has been renamed to 'sqlite3'.  Please use `gem install sqlite3`</p>
+<p>Gem has been renamed to ¡®sqlite3¡¯.  Please use `gem install sqlite3`</p>
 </li></ul>
 </li></ul>
 
@@ -444,7 +444,7 @@ details. This closes: Patches #9178</p>
 </li><li>
 <p>Removed GitHub gemspec</p>
 </li><li>
-<p>Fixed "No definition for" warnings from RDoc</p>
+<p>Fixed ¡°No definition for¡± warnings from RDoc</p>
 </li><li>
 <p>Generate zip and tgz files for releases</p>
 </li><li>
@@ -516,7 +516,7 @@ details. This closes: Patches #9178</p>
 </li><li>
 <p>Removed GitHub gemspec</p>
 </li><li>
-<p>Fixed "No definition for" warnings from RDoc</p>
+<p>Fixed ¡°No definition for¡± warnings from RDoc</p>
 </li><li>
 <p>Generate zip and tgz files for releases</p>
 </li><li>
@@ -588,7 +588,7 @@ transparently [Jamis Buck &lt;jamis@37signals.com&gt;]</p>
 <p>Use int_bind64 on Fixnum values larger than a 32bit C int can take. [Rob
 Holland &lt;rob@inversepath.com&gt;]</p>
 </li><li>
-<p>Work around a quirk in SQLite's error reporting by calling sqlite3_reset to
+<p>Work around a quirk in SQLite¡¯s error reporting by calling sqlite3_reset to
 produce a more informative error code upon a failure from sqlite3_step.
 [Rob Holland &lt;rob@inversepath.com&gt;]</p>
 </li><li>

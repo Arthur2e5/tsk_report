@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="IBM437"?>
+<?xml version="1.0" encoding="GBK"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <meta content="text/html; charset=IBM437" http-equiv="Content-Type" />
+  <meta content="text/html; charset=GBK" http-equiv="Content-Type" />
 
   <title>Class: SQLite3::Translator</title>
 
@@ -218,7 +218,7 @@ have a <a href="Translator.html">Translator</a> instance, in order to
 assist in type translation (Database#type_translation).</p>
 
 <p>Further, applications may define their own custom type translation logic by
-registering translator blocks with the corresponding database's translator
+registering translator blocks with the corresponding database¡¯s translator
 instance (<a
 href="Database.html#method-i-translator">Database#translator</a>).</p>
 
@@ -299,14 +299,14 @@ preinitialized with default translators for most SQL data types.</p>
             
             <p>Add a new translator block, which will be invoked to process type
 translations to the given type. The type should be an SQL datatype, and may
-include parentheses (i.e., "VARCHAR(30)"). However, any parenthetical
+include parentheses (i.e., ¡°VARCHAR(30)¡±). However, any parenthetical
 information is stripped off and discarded, so type translation decisions
-are made solely on the "base" type name.</p>
+are made solely on the ¡°base¡± type name.</p>
 
-<p>The translator block itself should accept two parameters, "type" and
-"value". In this case, the "type" is the full type name (including
+<p>The translator block itself should accept two parameters, ¡°type¡± and
+¡°value¡±. In this case, the ¡°type¡± is the full type name (including
 parentheses), so the block itself may include logic for changing how a type
-is translated based on the additional data. The "value" parameter is the
+is translated based on the additional data. The ¡°value¡± parameter is the
 (string) data to convert.</p>
 
 <p>The block should return the translated value.</p>

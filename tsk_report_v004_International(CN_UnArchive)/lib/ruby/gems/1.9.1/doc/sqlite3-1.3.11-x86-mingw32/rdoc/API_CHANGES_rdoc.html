@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <meta content="text/html; charset=IBM437" http-equiv="Content-Type" />
+  <meta content="text/html; charset=GBK" http-equiv="Content-Type" />
 
   <title>File: API_CHANGES.rdoc [sqlite3-1.3.11-x86-mingw32 Documentation]</title>
 
@@ -214,12 +214,12 @@ be freed in two cases:</p>
 garbage collected</p>
 </li></ul>
 
-<p>We can't free the memory for the statement in the garbage collection
+<p>We can¡¯t free the memory for the statement in the garbage collection
 function for the statement handler.  The reason is because there exists a
 race condition.  We cannot guarantee the order in which objects will be
 garbage collected.  So, it is possible that a connection and a statement
 are up for garbage collection.  If the database connection were to be
-free'd before the statement, then boom.  Instead we'll be conservative and
+free¡¯d before the statement, then boom.  Instead we¡¯ll be conservative and
 free unclosed statements when the connection is terminated.</p>
 
   </div>
